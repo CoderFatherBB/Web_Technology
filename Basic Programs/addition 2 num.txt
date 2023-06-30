@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+  <script>
+    function add() {
+      var numOne, numTwo, sum;
+      numOne = parseInt(document.getElementById("first").value);
+      numTwo = parseInt(document.getElementById("second").value);
+      sum = numOne + numTwo;
+      document.getElementById("answer").value = sum;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Addition Calculator</h1>
+    <div class="input-group">
+      <label for="first">Enter the First Number:</label>
+      <input id="first" type="number">
+    </div>
+    <div class="input-group">
+      <label for="second">Enter the Second Number:</label>
+      <input id="second" type="number">
+    </div>
+    <button class="btn" onclick="add()">Add</button>
+    <p class="result">Sum = <input id="answer" readonly></p>
+  </div>
+</body>
+</html>

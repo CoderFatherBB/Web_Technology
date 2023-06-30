@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+  <script>
+    function calculate() {
+      var numOne, numTwo, numThree, numFour;
+      numOne = parseInt(document.getElementById("number1").value);
+      numTwo = parseInt(document.getElementById("number2").value);
+      numThree = parseInt(document.getElementById("number3").value);
+      numFour = parseInt(document.getElementById("number4").value);
+
+      var numbers = [numOne, numTwo, numThree, numFour];
+      var sortedNumbers = numbers.sort(function(a, b) {
+        return b - a;
+      });
+
+      var sum = sortedNumbers[0] + sortedNumbers[1];
+      var difference = sortedNumbers[0] - sortedNumbers[3];
+      var division = sum / difference;
+      var multiplication = sum * difference;
+
+      document.getElementById("sumResult").value = sum;
+      document.getElementById("differenceResult").value = difference;
+      document.getElementById("divisionResult").value = division;
+      document.getElementById("multiplicationResult").value = multiplication;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Number Operations</h1>
+    <div class="input-group">
+      <label for="number1">Enter Number 1:</label>
+      <input id="number1" type="number">
+    </div>
+    <div class="input-group">
+      <label for="number2">Enter Number 2:</label>
+      <input id="number2" type="number">
+    </div>
+    <div class="input-group">
+      <label for="number3">Enter Number 3:</label>
+      <input id="number3" type="number">
+    </div>
+    <div class="input-group">
+      <label for="number4">Enter Number 4:</label>
+      <input id="number4" type="number">
+    </div>
+    <button class="btn" onclick="calculate()">Calculate</button>
+    <div class="result">
+      <label for="sumResult">Sum:</label>
+      <input id="sumResult" readonly>
+    </div>
+    <div class="result">
+      <label for="differenceResult">Difference:</label>
+      <input id="differenceResult" readonly>
+    </div>
+    <div class="result">
+      <label for="divisionResult">Division:</label>
+      <input id="divisionResult" readonly>
+    </div>
+    <div class="result">
+      <label for="multiplicationResult">Multiplication:</label>
+      <input id="multiplicationResult" readonly>
+    </div>
+  </div>
+</body>
+</html>

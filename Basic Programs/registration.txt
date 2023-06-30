@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"],
+        .container input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .container button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="Name">
+            <div class="error" id="nameError"></div>
+
+            <input type="email" id="email" placeholder="Email">
+            <div class="error" id="emailError"></div>
+
+            <input type="password" id="password" placeholder="Password">
+            <div class="error" id="passwordError"></div>
+
+            <input type="tel" id="mobile" placeholder="Mobile Number">
+            <div class="error" id="mobileError"></div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const mobileInput = document.getElementById("mobile");
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const passwordError = document.getElementById("passwordError");
+        const mobileError = document.getElementById("mobileError");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            validateForm();
+        });
+
+        function validateForm() {
+            clearErrors();
+
+            let isValid = true;
+
+            if (nameInput.value === "") {
+                nameError.textContent = "Name is required";
+                isValid = false;
+            }
+
+            if (emailInput.value === "") {
+                emailError.textContent = "Email is required";
+                isValid = false;
+            } else if (!isValidEmail(emailInput.value)) {
+                emailError.textContent = "Invalid email format";
+                isValid = false;
+            }
+
+            if (passwordInput.value === "") {
+                passwordError.textContent = "Password is required";
+                isValid = false;
+            } else if (passwordInput.value.length < 6) {
+                passwordError.textContent = "Password should be at least 6 characters long";
+                isValid = false;
+            }
+
+            if (mobileInput.value === "") {
+                mobileError.textContent = "Mobile Number is required";
+                isValid = false;
+            } else if (!isValidMobile(mobileInput.value)) {
+                mobileError.textContent = "Invalid mobile number format";
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Form is valid, you can submit it or perform further actions here
+                alert("Form submitted successfully");
+                form.reset();
+            }
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function isValidMobile(mobile) {
+            const mobileRegex = /^\d{10}$/;
+            return mobileRegex.test(mobile);
+        }
+
+        function clearErrors() {
+            nameError.textContent = "";
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            mobileError.textContent = "";
+        }
+    </script>
+</body>
+</html>

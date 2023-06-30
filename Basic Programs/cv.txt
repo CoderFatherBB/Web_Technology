@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #007bff;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      margin-bottom: 10px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .section-content {
+      margin-left: 30px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-top: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="font-size: 36px;">Curriculum Vitae</h1>
+    <div class="section">
+      <h2 class="section-title">Personal Information</h2>
+      <div class="section-content">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Date of Birth:</strong> January 1, 1990</p>
+        <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+        <p><strong>Email:</strong> johndoe@example.com</p>
+        <p><strong>Phone:</strong> +1 123 456 7890</p>
+      </div>
+    </div>
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="section-content">
+        <p><strong>Degree:</strong> Bachelor of Science</p>
+        <p><strong>University:</strong> XYZ University</p>
+        <p><strong>Year:</strong> 2012-2016</p>
+      </div>
+    </div>
+    <div class="section">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="section-content">
+        <p><strong>Company:</strong> ABC Corporation</p>
+        <p><strong>Position:</strong> Software Engineer</p>
+        <p><strong>Duration:</strong> 2016-2020</p>
+        <p><strong>Responsibilities:</strong></p>
+        <ul>
+          <li>Developing and maintaining web applications</li>
+          <li>Collaborating with cross-functional teams</li>
+          <li>Testing and debugging software</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-content">
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>Database management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
